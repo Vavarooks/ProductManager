@@ -19,3 +19,14 @@ module.exports.createNewProduct = (req,res) =>{
         .catch(err => res.json({error: err}))
 }
 
+module.exports.findOneProductAndDelete = (req,res) =>{
+    Product.findOne({_id: req.params.id})
+        .then(result => res.json({result: result}))
+        .catch(err => res.json({error: err}))
+}
+
+module.exports.findProductAndUpdate = (req,res) =>{
+    Product.findOneAndUpdate({_id: req.params.id}, req.body, {new:true, runValidators:true})
+        .then(data => res.json({data: data}))
+        .catch(err => res.json({error: err}))
+}
