@@ -12,18 +12,18 @@ const ShowOne = (props) => {
         price: "",
         description: ""
     })
-    const [title, setItemName] = useState("");
-    const [price, setProductPrice] = useState("");
-    const [description, setProductDesc] = useState("");
+    const [title, setTitle] = useState("");
+    const [price, setPrice] = useState("");
+    const [description, setDesc] = useState("");
 
     useEffect(() => {
         axios.get(`http://localhost:9001/api/product/${id}`)
             .then(res =>{
                 console.log(res)
                 setProduct(res.data.oneProductById);
-                setItemName(res.data.oneProductById.title)
-                setProductPrice(res.data.oneProductById.price);
-                setProductDesc(res.data.oneProductById.description);
+                setTitle(res.data.title)
+                setPrice(res.data.price);
+                setDesc(res.data.description);
             })
             .catch(err =>{
                 console.log(err)
@@ -32,12 +32,11 @@ const ShowOne = (props) => {
 
     return (
         <>
-            <h1>This is ShowOne</h1>
             <div className='container card d-block mx-auto w-85 my-3 p-3'>
-                <p>This id: {id}</p>
-                <h1>Product Name: {product.title}</h1>
-                <h3>Price: $ {product.price}</h3>
-                <h6>Description: {product.description}</h6>
+                <p>Product id: {id}</p>
+                <h1>Product Name: {title}</h1>
+                <h3>Price: $ {price}</h3>
+                <h6>Description: {description}</h6>
             </div>
         </>
     )
