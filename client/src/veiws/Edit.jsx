@@ -24,10 +24,11 @@ const EditOne = (props) => {
             description: description
         }
         editOneProductApi(updatedProduct);
+        // console.log(updatedProduct);
     }
 
     const editOneProductApi = (product) => {
-        axios.put(`http://localhost:9001/api/product/update/${id}}`)
+        axios.put(`http://localhost:9001/api/product/update/${id}`, product)
             .then(res =>{
                 console.log(res)
                 navigate('/')
