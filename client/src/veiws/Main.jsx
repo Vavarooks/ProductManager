@@ -23,7 +23,7 @@ const Main = (props) => {
     }
 
     const newItemApi = (product) => {
-        axios.post("http://localhost:9001/api/product/create", products)
+        axios.post("http://localhost:9001/api/product/create", product)
             .then(res => {
                 addItemToProducts(res.newItem);
             })
