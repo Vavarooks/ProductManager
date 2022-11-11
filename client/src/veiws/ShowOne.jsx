@@ -1,6 +1,5 @@
 import axios from 'axios';
-import { useState } from 'react';
-import { useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import {useParams} from 'react-router-dom';
 const ShowOne = (props) => {
 
