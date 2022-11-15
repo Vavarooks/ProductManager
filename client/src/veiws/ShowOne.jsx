@@ -20,7 +20,7 @@ const ShowOne = (props) => {
             .then(res =>{
                 console.log(res)
                 setProduct(res.data.oneProductById);
-                setTitle(res.data.title)
+                setTitle(res.data.title);
                 setPrice(res.data.price);
                 setDesc(res.data.description);
             })
